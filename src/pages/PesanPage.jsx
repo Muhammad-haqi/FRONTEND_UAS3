@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import PesanItem from "../components/PesanItem";
-import BASE_URL from '../utils/apiConfig.js'; // ⬅️ PERBAIKAN: Import BASE_URL
+import BASE_URL from '../utils/apiConfig.js'; 
 
 const getToken = () => {
     try {
@@ -181,10 +181,9 @@ export default function PesanPage() {
         };
 
         const method = orderToEdit ? "PUT" : "POST";
-        // ⬅️ PERBAIKAN: Menggunakan BASE_URL untuk PUT dan POST
         const url = orderToEdit
-            ? `${BASE_URL}/api/pesanan/${form.id}` // Untuk Edit (PUT)
-            : `${BASE_URL}/api/pesanan`;         // Untuk Buat Baru (POST)
+            ? `${BASE_URL}/api/pesanan/${form.id}` 
+            : `${BASE_URL}/api/pesanan`;         
 
         const successMessage = orderToEdit ? "Perubahan pesanan berhasil disimpan!" : "Pemesanan berhasil!";
 
@@ -347,4 +346,5 @@ export default function PesanPage() {
             </div>
         </section>
     );
+
 }
