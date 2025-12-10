@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserPlus } from "lucide-react";
-import BASE_URL from '../utils/apiConfig.js'; // ⬅️ PERBAIKAN: Import BASE_URL
+import BASE_URL from '../utils/apiConfig.js'; 
 
 export default function RegisterPage() {
     const navigate = useNavigate();
@@ -55,7 +55,6 @@ export default function RegisterPage() {
         setIsLoading(true);
         try {
             
-            // ⬅️ PERBAIKAN: Mengganti URL hardcoded dengan BASE_URL
             const res = await fetch(`${BASE_URL}/api/auth/register`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -88,7 +87,6 @@ export default function RegisterPage() {
         }
     };
 
-    // ... (rest of the component JSX) ...
     return (
         
         <div 
@@ -115,7 +113,6 @@ export default function RegisterPage() {
                 )}
 
                 <form onSubmit={handleRegister}>
-                    {/* Input Nama Lengkap */}
                     <div className="mb-4">
                         <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="namaLengkap">Nama Lengkap</label>
                         <input
@@ -131,7 +128,6 @@ export default function RegisterPage() {
                         />
                     </div>
 
-                    {/* Input Identifier */}
                     <div className="mb-4">
                         <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="identifier">Email atau Nomor HP</label>
                         <input
@@ -147,7 +143,6 @@ export default function RegisterPage() {
                         />
                     </div>
 
-                    {/* Input Password */}
                     <div className="mb-4">
                         <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="password">Password</label>
                         <input
@@ -163,7 +158,6 @@ export default function RegisterPage() {
                         />
                     </div>
 
-                    {/* Input Konfirmasi Password */}
                     <div className="mb-6">
                         <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="confirmPassword">Konfirmasi Password</label>
                         <input
@@ -211,4 +205,5 @@ export default function RegisterPage() {
             </div>
         </div>
     );
+
 }
