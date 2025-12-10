@@ -1,10 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaUnlockAlt } from "react-icons/fa"; // Icon untuk admin
-import BASE_URL from '../utils/apiConfig.js'; // ⬅️ PERBAIKAN: Import BASE_URL
-
-// ⬅️ PERBAIKAN: Hapus variabel lingkungan yang lama
-// const API_BASE_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
+import { FaUnlockAlt } from "react-icons/fa"; 
+import BASE_URL from '../utils/apiConfig.js'; 
 
 export default function AdminLoginPage() {
     const navigate = useNavigate();
@@ -25,7 +22,6 @@ export default function AdminLoginPage() {
         }
 
         try {
-            // ⬅️ PERBAIKAN: Mengganti URL lama dengan BASE_URL
             const response = await fetch(`${BASE_URL}/api/auth/login`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -59,7 +55,6 @@ export default function AdminLoginPage() {
             console.error("Login API error:", err);
             setIsLoading(false);
             
-            // ⬅️ PERBAIKAN: Menghapus pesan error localhost yang spesifik
             if (err.message.includes("Failed to fetch")) {
                 setErrorMessage("Koneksi ke server gagal.");
             } else {
@@ -138,7 +133,6 @@ export default function AdminLoginPage() {
                         ) : "Login Admin"}
                     </button>
                     
-                    {/* Kembali ke Login User */}
                     <div className="text-center pt-4">
                         <span
                             className="text-blue-600 cursor-pointer text-sm font-medium hover:text-blue-800 transition"
@@ -151,4 +145,5 @@ export default function AdminLoginPage() {
             </div>
         </section>
     );
+
 }
