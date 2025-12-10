@@ -272,7 +272,6 @@ export default function HomePage() {
 
     <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
 
-      {/* CARD 1 */}
       <div className="p-6 rounded-2xl bg-white/70 backdrop-blur-md border border-sky-100 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer">
         <div className="flex items-center gap-4">
           <div className="w-12 h-12 bg-gradient-to-br from-sky-500 to-blue-600 rounded-xl flex items-center justify-center text-white text-2xl">
@@ -285,7 +284,6 @@ export default function HomePage() {
         </p>
       </div>
 
-      {/* CARD 2 */}
       <div className="p-6 rounded-2xl bg-white/70 backdrop-blur-md border border-purple-100 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer">
         <div className="flex items-center gap-4">
           <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-fuchsia-600 rounded-xl flex items-center justify-center text-white text-2xl">
@@ -298,7 +296,6 @@ export default function HomePage() {
         </p>
       </div>
 
-      {/* CARD 3 */}
       <div className="p-6 rounded-2xl bg-white/70 backdrop-blur-md border border-emerald-100 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer">
         <div className="flex items-center gap-4">
           <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-green-600 rounded-xl flex items-center justify-center text-white text-2xl">
@@ -317,7 +314,6 @@ export default function HomePage() {
 
 
 
-      {/* ===================== HERO ===================== */}
 <section className="relative h-[450px] md:h-[500px] flex items-center text-white w-full">
 
   <img
@@ -359,7 +355,6 @@ export default function HomePage() {
 
 
 
-      {/* ===================== KATEGORI DESTINASI ===================== */}
       <div className="max-w-7xl mx-auto px-4 w-full py-10">
         <h2 className="text-3xl font-extrabold mb-3 text-blue-800 text-center">
           Jelajahi Nusantara bersama SkyFly Pro
@@ -424,7 +419,6 @@ export default function HomePage() {
       </div>
 
 
-      {/* ===================== REVIEW PENGGUNA ===================== */}
       <section className="px-6 py-16 bg-gray-50 w-full">
         <h2 className="text-2xl font-bold mb-6 text-sky-600">Apa Kata Pengguna ✨</h2>
 
@@ -455,7 +449,6 @@ export default function HomePage() {
       </section>
 
 
-      {/* ===================== KENAPA PILIH SKYFLY ===================== */}
       <section className="w-full bg-white py-16">
         <div className="max-w-7xl mx-auto px-6">
 
@@ -480,7 +473,6 @@ export default function HomePage() {
       </section>
 
 
-      {/* ===================== SLIDER DESTINASI ===================== */}
       <section className="w-full bg-gray-50 py-20">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl font-extrabold text-center text-blue-800 mb-10">
@@ -532,7 +524,6 @@ export default function HomePage() {
 }
 
 
-// ========================= COMPONENT KECIL ========================= //
 
 function ReviewCard({ img, nama, job, text }) {
   return (
@@ -559,4 +550,5 @@ function Keunggulan({ icon, title, desc }) {
       <p className="text-gray-600 text-sm">{desc}</p>
     </div>
   );
+
 }
