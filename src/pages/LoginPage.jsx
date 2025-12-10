@@ -1,12 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import BASE_URL from '../utils/apiConfig.js'; // ⬅️ PERBAIKAN: Import BASE_URL
+import BASE_URL from '../utils/apiConfig.js'; 
 
 import { FcGoogle } from "react-icons/fc";
 import { FaApple, FaFacebook, FaTiktok, FaUnlockAlt } from "react-icons/fa"; 
-
-// ⬅️ PERBAIKAN: Hapus variabel lingkungan yang lama
-// const API_BASE_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
 
 export default function LoginPage({ onLogin }) {
     const navigate = useNavigate();
@@ -27,7 +24,6 @@ export default function LoginPage({ onLogin }) {
         }
 
         try {
-            // ⬅️ PERBAIKAN: Mengganti URL lama dengan BASE_URL yang diimpor
             const response = await fetch(`${BASE_URL}/api/auth/login`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -60,12 +56,6 @@ export default function LoginPage({ onLogin }) {
             console.error("Login API error:", err);
             setIsLoading(false);
             
-            // ⬅️ PERBAIKAN: Menghapus pesan error localhost yang spesifik
-            // if (err.message.includes("Failed to fetch")) {
-            //     setErrorMessage("Koneksi ke server gagal. Pastikan server Anda berjalan di port 5000.");
-            // } else {
-            //     setErrorMessage(err.message);
-            // }
             setErrorMessage(err.message || "Terjadi kesalahan saat mencoba login.");
         } finally {
             setIsLoading(false);
@@ -76,7 +66,6 @@ export default function LoginPage({ onLogin }) {
         setErrorMessage("Fitur login Google belum diimplementasikan.");
     }
 
-    // ... (rest of the component JSX) ...
     return (
         <section
             className="min-h-screen flex items-center justify-center bg-cover bg-no-repeat"
@@ -200,4 +189,5 @@ export default function LoginPage({ onLogin }) {
             </div>
         </section>
     );
+
 }
