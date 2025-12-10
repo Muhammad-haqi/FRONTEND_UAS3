@@ -51,7 +51,6 @@ export default function Bantuan() {
             transition={{ duration: 0.6 }}
         >
 
-            {/* Title */}
             <motion.div 
                 className="text-center mb-10"
                 initial={{ opacity: 0, y: -20 }}
@@ -69,7 +68,6 @@ export default function Bantuan() {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16 px-4">
 
-                {/* Live Chat (Terhubung ke WA) */}
                 <motion.div
                     className="bg-white rounded-2xl shadow-md p-6 border border-gray-100"
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -89,7 +87,6 @@ export default function Bantuan() {
                     </button>
                 </motion.div>
 
-                {/* Email Support */}
                 <motion.div
                     className="bg-white rounded-2xl shadow-md p-6 border border-gray-100"
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -109,7 +106,6 @@ export default function Bantuan() {
                     </button>
                 </motion.div>
 
-                {/* Telepon CS  */}
                 <motion.div
                     className="bg-white rounded-2xl shadow-md p-6 border border-gray-100"
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -180,4 +176,5 @@ export default function Bantuan() {
 
         </motion.div>
     );
+
 }
