@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import BASE_URL from '../utils/apiConfig.js'; // ⬅️ PERBAIKAN: Import BASE_URL
+import BASE_URL from '../utils/apiConfig.js'; 
 
 const getToken = () => localStorage.getItem("userToken") || null;
 
@@ -29,7 +29,6 @@ export default function AdminDashboard() {
             setError(null);
             
             try {
-                // ⬅️ PERBAIKAN: Mengganti URL localhost dengan BASE_URL
                 const res = await fetch(`${BASE_URL}/api/pesanan/admin/all`, {
                     method: 'GET',
                     headers: {
@@ -100,4 +99,5 @@ export default function AdminDashboard() {
             </div>
         </section>
     );
+
 }
