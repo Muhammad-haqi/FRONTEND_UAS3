@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import RiwayatItem from "../components/RiwayatItem";
 import { useNavigate } from "react-router-dom";
 import Refund from "../components/Refund";
-import BASE_URL from '../utils/apiConfig.js'; // ⬅️ PERBAIKAN: Import BASE_URL Vercel
+import BASE_URL from '../utils/apiConfig.js'; 
 
 
 const getToken = () => {
@@ -24,10 +24,8 @@ export default function RiwayatPage() {
 
     const [showRefundModal, setShowRefundModal] = useState(false);
 
-    // Fungsi untuk mendapatkan userId (untuk validasi navigasi)
     const getUserId = () => {
         try {
-            // 🔑 Gunakan KUNCI "userInfo"
             const user = JSON.parse(localStorage.getItem("userInfo"));
             if (user?.id) return user.id;
         } catch {}
@@ -48,7 +46,6 @@ export default function RiwayatPage() {
         }
 
         
-        // ⬅️ PERBAIKAN 1: Mengubah URL fetch riwayat
         fetch(`${BASE_URL}/api/pesanan/riwayat`, { 
             method: 'GET',
             headers: {
@@ -106,7 +103,6 @@ export default function RiwayatPage() {
         payload.status = "Sudah dibayar";
 
         try {
-            // ⬅️ PERBAIKAN 2: Mengubah URL PUT (Bayar)
             const res = await fetch(`${BASE_URL}/api/pesanan/${selectedOrder.id}`, {
                 method: "PUT",
                 headers: { 
@@ -152,7 +148,6 @@ export default function RiwayatPage() {
         }
 
         try {
-            // ⬅️ PERBAIKAN 3: Mengubah URL DELETE
             const res = await fetch(`${BASE_URL}/api/pesanan/${id}`, {
                 method: "DELETE",
                 headers: {
@@ -201,7 +196,6 @@ export default function RiwayatPage() {
         payload.paid = false;
 
         try {
-            // ⬅️ PERBAIKAN 4: Mengubah URL PUT (Refund)
             const res = await fetch(`${BASE_URL}/api/pesanan/${selectedOrder.id}`, {
                 method: "PUT",
                 headers: { 
@@ -259,7 +253,6 @@ export default function RiwayatPage() {
                 ))}
             </div>
 
-            {/* Modal Pembayaran */}
             {showPayModal && selectedOrder && (
                 <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex justify-center items-center z-50">
                     <div className="bg-white w-[420px] rounded-xl shadow-lg p-6 space-y-4">
@@ -342,7 +335,6 @@ export default function RiwayatPage() {
                 </div>
             )}
 
-            {/* Modal Refund */}
             {showRefundModal && selectedOrder && (
                 <Refund
                     order={selectedOrder}
@@ -352,4 +344,5 @@ export default function RiwayatPage() {
             )}
         </section>
     );
+
 }
